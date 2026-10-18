@@ -1,26 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Photo Gallery</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Photo Gallery</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<main>
-  <h1>Interactive Photo Gallery</h1>
+    <a class="skip-link" href="#gallery">Skip to photo gallery</a>
 
-  <div id="image" class="preview">Hover over an image below to display here.</div>
+    <main>
+        <h1>Interactive Photo Gallery</h1>
 
-  <div class="gallery">
-    <img src="images/mountain.png" alt="Snowy mountain landscape" onmouseover="upDate(this)" onmouseout="undo()">
-    <img src="images/ocean.png" alt="Blue ocean and beach" onmouseover="upDate(this)" onmouseout="undo()">
-    <img src="images/forest.png" alt="Green forest with tall trees" onmouseover="upDate(this)" onmouseout="undo()">
-    <img src="images/desert.png" alt="Warm desert with sand dunes" onmouseover="upDate(this)" onmouseout="undo()">
-    <img src="images/city.png" alt="Modern city skyline at sunset" onmouseover="upDate(this)" onmouseout="undo()">
-    <img src="images/lake.png" alt="Calm lake surrounded by hills" onmouseover="upDate(this)" onmouseout="undo()">
-  </div>
-</main>
-<script src="script.js"></script>
+        <p class="intro">
+            Hover over an image or use the Tab key to focus it.
+        </p>
+
+        <section aria-labelledby="preview-heading">
+            <h2 id="preview-heading">Image Preview</h2>
+
+            <div id="image" class="preview" role="status" aria-live="polite">
+                Hover over an image below to display here.
+            </div>
+        </section>
+
+        <section id="gallery" aria-labelledby="gallery-heading">
+            <h2 id="gallery-heading">Photo Gallery</h2>
+
+            <div class="gallery">
+                <figure>
+                    <img
+                        src="images/mountain.png"
+                        alt="Snowy mountain peaks beneath a bright sky"
+                        onmouseover="upDate(this)"
+                        onmouseleave="undo()"
+                        onfocus="upDate(this)"
+                        onblur="undo()"
+                    >
+                    <figcaption>Mountain Landscape</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="images/ocean.png"
+                        alt="Blue ocean waves beside a sandy beach"
+                        onmouseover="upDate(this)"
+                        onmouseleave="undo()"
+                        onfocus="upDate(this)"
+                        onblur="undo()"
+                    >
+                    <figcaption>Ocean and Beach</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="images/forest.png"
+                        alt="Tall green trees in a peaceful forest"
+                        onmouseover="upDate(this)"
+                        onmouseleave="undo()"
+                        onfocus="upDate(this)"
+                        onblur="undo()"
+                    >
+                    <figcaption>Green Forest</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="images/desert.png"
+                        alt="Golden sand dunes under the desert sun"
+                        onmouseover="upDate(this)"
+                        onmouseleave="undo()"
+                        onfocus="upDate(this)"
+                        onblur="undo()"
+                    >
+                    <figcaption>Golden Desert</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="images/city.png"
+                        alt="Modern city buildings at sunset"
+                        onmouseover="upDate(this)"
+                        onmouseleave="undo()"
+                        onfocus="upDate(this)"
+                        onblur="undo()"
+                    >
+                    <figcaption>City at Sunset</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="images/lake.png"
+                        alt="Calm blue lake surrounded by hills"
+                        onmouseover="upDate(this)"
+                        onmouseleave="undo()"
+                        onfocus="upDate(this)"
+                        onblur="undo()"
+                    >
+                    <figcaption>Mountain Lake</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
